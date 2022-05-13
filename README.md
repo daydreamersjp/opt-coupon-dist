@@ -38,7 +38,7 @@ There are two data files used:
 | prob_dm2   | Probability of conversion when customers receive 10 USD coupon.                                                                  |
 | prob_dm3   | Probability of conversion when customers receive 20 USD coupon.                                                                  |
 
-![](./data/image/segment_prob.jpg)
+![](./data/image/segment_prob.jpg =x300)
 
 
 # Model
