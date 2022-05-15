@@ -1,8 +1,6 @@
 # Introduction
 
 
-
-
 # Purpose
 
 Imagine you are tasked to decide the amount of budget for the use of direct mail marketing of one of your EC sites.
@@ -152,7 +150,7 @@ The notebook XXXXXXXXXXXXXXXXXXX gives the walkthrough of this experiment. The o
 
 This chart shows the increase of the conversion against the increase of the budget.
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+<img src="./data/image/scatter_plot_budget_and_conversion_increase.jpg" width=500>
 
 The increase of the conversion is slightly away upward from the diagonal line, which means the uplift of the conversions decays as "low-hanging fruit" is trimmed earlier phase.
 
@@ -160,7 +158,7 @@ The increase of the conversion is slightly away upward from the diagonal line, w
 
 Then this chart shows the ROIs.
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+<img src="./data/image/scatter_plot_budget_vs_roi.jpg" width=500>
 
 Now we got the champion at the budget of 18,000 USD. If the budget is less than 18,000 USD we miss further gaining opportunity, while if the budget is more than 18,000 USD we will just lose money because we cannot expect the sales is more than we pay.
 
@@ -168,14 +166,43 @@ Now we got the champion at the budget of 18,000 USD. If the budget is less than 
 
 Finally we see the grand best solution for the mail distribution with budget 18,000 USD.
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+<img src="./data/image/heatmap_dm_proportion_number_18000.jpg" width=750>
 
 <br /><br />
 
-# What's Next
+# Let's Reveiw the Results
+Here let's review the results and discuss what we can think next.
+
+## Can we use budget amount as the decision variable and ROI as the objective?
+
+We can use budget amount as another decision variable and ROI as the objective of the problem. Actually it is more direct. The only reason I did not do that way was because it would make the program non-linear.
+
+The objective function will be like:
+
+![](https://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Csum_%7Bs%20%5Cin%20S%7D%20%5Csum_%7Bd%20%5Cin%20D%7D%20N_%7Bs%7D%28p_%7Bs%2Cd%7D-p_%7Bs%2C1%7D%29x_%7Bs%2Cd%7D%20%5Ccdot%20unit%20%5C%20of%20%5C%20sales%7D%7Bbudget%7D)
+
+Because the decision variable appears both in numerator and denominator, it makes the objective non-linear. Then it goes out of the scope of Python library 'Pulp'.
+
+Since there are many non-linear solvers, it is not a complete deal breaker but I took a simplified approach here.
+
+<br />
+
+## Isn't ROI too low in the case study?
+
+Actually it is. It was 2.25% against the investment of 18,000 USD, which is around 400 USD. This amount of return agains as much investment as 18,000 USD is just a joke--particularly so when we remember we did not take the non-coupon cost or indirect cost out of consideration in this study.
+
+Based on this analysis, just giving up the plan is an idea: we are not a lot better off than executing plan and being disappointed later.
+
+Another considerations may come if we:
+- do an adjustment of coupon value. This should be followed by the change of conversion probabilities; as a matter of course, it is natural to believe the coupon value changes cause shifts of their conversion probabilities.
+- do a better job in customer segmentation. Again this should lead to the redraft of conversion probabilities.
+- grow the customer base. This should be more business-driven approach and will need many got involved but could be fruitful when successful.
+
+
+
+
 
 Giving more flexibility
-- variable budget -> objective function. no longer linear.
 - variable coupon values -> natural to assume the conversion probability will also change, but need predictive modeling here, like using ML models.
 How to get probability data? 
 Prediction including ML
@@ -183,7 +210,6 @@ Causality
 
  (remember here we parameterize the sales per conversion is 30 USD. If the unit sales is different, the ROI curve is also different)
 
-ROI evaluation
 change of coupon amount
 LIP -> metaheuristic
 
