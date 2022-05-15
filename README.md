@@ -11,6 +11,7 @@ Imagine you are tasked to decide the amount of budget for the use of direct mail
 
 This repository gives a sample 
 
+<br /><br />
 
 # Data
 
@@ -48,6 +49,7 @@ There are two data files used:
 
 ![](./data/image/parallel_plot_of_conversion_probability.jpg)
 
+<br /><br />
 
 # Model
 ## Define notations
@@ -133,6 +135,7 @@ Now there we have ![](https://latex.codecogs.com/gif.latex?unit%20%5C%20sales) a
 
 xxxxxxxxxxxxx
 
+<br /><br />
 
 # What's Next
 
