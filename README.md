@@ -7,6 +7,7 @@
 
 Imagine you are tasked to decide the amount of budget for the use of direct mail marketing of one of your EC sites.
 
+![]("./data/external/diagram_dm_sending.csv")
 
 
 This repository gives a sample 
