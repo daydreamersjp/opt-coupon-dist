@@ -82,7 +82,7 @@ By optimizing ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D), we want t
 <br /><br />
 
 ### Constraint 1: the sum of probabilities to the same segment for all direct mail type is 1
-![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bd%20%5Cin%20D%7Dx_%7Bs%2Cd%7D%20%5C%20%5C%20%28s%5Cin%20S%29)
+![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bd%20%5Cin%20D%7Dx_%7Bs%2Cd%7D%3D1%20%5C%20%5C%20%28s%20%5Cin%20S%29)
 <br /><br />
 
 ### Constraint 2: expected total amount of coupon redeemed is within budget
@@ -107,11 +107,15 @@ This notebook (./opt_step_by_step.ipynb) gives the modeling walkthrough using `P
 
 Here's the heatmap of ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D).
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 The results indicate that for the group with no purchase last year except for age20\~34, we should send some coupon and particularly the group age50\~ will appreciate the higher valued coupon more. 
 
 And here's the heatmap of ![](https://latex.codecogs.com/gif.latex?N_%7Bs%7Dx_%7Bs%2Cd%7D)
 
-<br /><br />
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+<br />
 
 ## Variable budget and finding optimal
 Then let's see how we can solve the original question: defining the optimal amount of budget.
@@ -140,10 +144,31 @@ Now there we have ![](https://latex.codecogs.com/gif.latex?unit%20%5C%20sales) a
 
 The approach here is to repeat the optimizations again and again over the multiple budget inputs, calculate the ROI for each, and choose the scenario with the largest ROI.
 
+It's worth noting that under each budget scenario, the mail distribution is always optimized so that it will generate the most conversion increase. Therefore, the mail distribution ratios are all different per scenario.
+
+<br />
+
 The notebook XXXXXXXXXXXXXXXXXXX gives the walkthrough of this experiment. The optimizations were repeated every 1,000 USD increment from 5,000 USD to 50,000 USD.
 
+This chart shows the increase of the conversion against the increase of the budget.
 
-xxxxxxxxxxxxx
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+The increase of the conversion is slightly away upward from the diagonal line, which means the uplift of the conversions decays as "low-hanging fruit" is trimmed earlier phase.
+
+<br />
+
+Then this chart shows the ROIs.
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Now we got the champion at the budget of 18,000 USD. If the budget is less than 18,000 USD we miss further gaining opportunity, while if the budget is more than 18,000 USD we will just lose money because we cannot expect the sales is more than we pay.
+
+<br />
+
+Finally we see the grand best solution for the mail distribution with budget 18,000 USD.
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 <br /><br />
 
@@ -155,6 +180,8 @@ Giving more flexibility
 How to get probability data? 
 Prediction including ML
 Causality
+
+ (remember here we parameterize the sales per conversion is 30 USD. If the unit sales is different, the ROI curve is also different)
 
 ROI evaluation
 change of coupon amount
