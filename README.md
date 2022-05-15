@@ -1,8 +1,4 @@
 # Introduction
-
-
-# Purpose
-
 Imagine you are tasked to decide the amount of budget for the use of direct mail marketing of one of your EC sites.
 
 <img src="./data/image/diagram_dm_sending.jpg" width=500>
@@ -16,7 +12,6 @@ This repository gives a sample
 <br /><br />
 
 # Data
-
 Data was copied from this repository (https://github.com/ohmsha/PyOptBook/tree/main/4.coupon)
 
 There are two data files used:
@@ -95,7 +90,7 @@ Since we only care about the amount the coupon is actually redeemed, the amount 
 
 <br /><br />
 
-# Result
+# Results
 ## Fixed budget
 For the ease of the problem, let's first remove some flexibility and define the followings as exogenous parameters:
 - ![](https://latex.codecogs.com/gif.latex?c_%7Bdm1%7D%20%3D%200), ![](https://latex.codecogs.com/gif.latex?c_%7Bdm2%7D%20%3D%2010), and ![](https://latex.codecogs.com/gif.latex?c_%7Bdm3%7D%20%3D%2020).
@@ -120,7 +115,7 @@ Then let's see how we can solve the original question: defining the optimal amou
 
 Then what we next think of should be "to what we optimize?" We are likely to have monotonically more conversions as the budget increases, because it will give chances to send more coupon and more coupon results in more conversions. So, if we say the increase of conversions is what we target, it will end with "the best coupon for everyone". Intuitively this is not right, but why?
 
-This is because we first distribute the coupons to the customers with the most possiblity of conversions (i.e. "low-hanging fruit") and as we keep going, the fruits go higher and higher until in the end we will reach the point when it makes no sense to add budget.
+This is because we first distribute the coupons to the customers with the most possibility of conversions (i.e. "low-hanging fruit") and as we keep going, the fruits go higher and higher until in the end we will reach the point when it makes no sense to add budget.
 
 <br />
 
@@ -130,7 +125,7 @@ This can be discussed looking at the ROI (return on investment).
 
 ![](https://latex.codecogs.com/gif.latex?ROI%20%3D%20%5Cfrac%7Bexpected%20%5C%20increase%20%5C%20of%20%5C%20sales%7D%7Bbudget%20%5C%20amount%7D%20%3D%20%5Cfrac%7Bexpected%20%5C%20increase%20%5C%20of%20%5C%20conversion*unit%20%5C%20sales%7D%7Bbudget%20%5C%20amount%7D)
 
-And maximizing ROI will give the cutoff point to increase the budget. There, the increase of denominator gets more than the increase of numerator.
+And maximizing ROI will give the cutoff point to increase the budget.
 
 Now there we have ![](https://latex.codecogs.com/gif.latex?unit%20%5C%20sales) as a new exogenous parameter. These are all the exogenous parameters and their inputs for our case study this time:
 - ![](https://latex.codecogs.com/gif.latex?c_%7Bdm1%7D%20%3D%200), ![](https://latex.codecogs.com/gif.latex?c_%7Bdm2%7D%20%3D%2010), and ![](https://latex.codecogs.com/gif.latex?c_%7Bdm3%7D%20%3D%2020).
@@ -152,7 +147,7 @@ This chart shows the increase of the conversion against the increase of the budg
 
 <img src="./data/image/scatter_plot_budget_and_conversion_increase.jpg" width=500>
 
-The increase of the conversion is slightly away upward from the diagonal line, which means the uplift of the conversions decays as "low-hanging fruit" is trimmed earlier phase.
+Both lines are monotonically increasing but the increase of the conversion is slightly away upward from the diagonal line, which means we starts from the "low-hanging fruit" but as we send more coupons the uplift of the conversions decays since less juice is left.
 
 <br />
 
@@ -160,7 +155,7 @@ Then this chart shows the ROIs.
 
 <img src="./data/image/scatter_plot_budget_vs_roi.jpg" width=500>
 
-Now we got the champion at the budget of 18,000 USD. If the budget is less than 18,000 USD we miss further gaining opportunity, while if the budget is more than 18,000 USD we will just lose money because we cannot expect the sales is more than we pay.
+Now we got the champion outcome at the budget of 18,000 USD. If the budget is less than 18,000 USD we miss further gaining opportunity, while if the budget is more than 18,000 USD we will just lose money because we cannot expect the sales is more than we pay.
 
 <br />
 
@@ -170,7 +165,7 @@ Finally we see the grand best solution for the mail distribution with budget 18,
 
 <br /><br />
 
-# Let's Reveiw the Results
+# Let's Review the Results
 Here let's review the results and discuss what we can think next.
 
 ## Can we use budget amount as the decision variable and ROI as the objective?
@@ -183,7 +178,7 @@ The objective function will be like:
 
 Because the decision variables appear both in numerator and denominator, it makes the objective non-linear. Then it goes out of the scope of Python library 'Pulp'.
 
-Since there are many non-linear solvers, it is not a complete deal breaker but I took a simplified approach here.
+Since there are many non-linear solvers even including metaheuristic solutions, it is not a complete deal breaker but I took a simplified approach here.
 
 <br />
 
@@ -191,7 +186,7 @@ Since there are many non-linear solvers, it is not a complete deal breaker but I
 
 Actually it is. It was 2.25% against the investment of 18,000 USD, which is around 400 USD. This amount of return against as much investment as 18,000 USD is just a joke--particularly so when we remember we did not take the non-coupon cost or indirect cost out of consideration in this study.
 
-Based on this analysis, just giving up the plan is an idea: we are not a lot better off than executing plan and being disappointed later.
+Based on this analysis, just giving up the plan is an idea: we will be a lot better off than executing plan and being disappointed later.
 
 Another considerations may come if we:
 - do an adjustment of coupon value. This should be followed by the change of conversion probabilities; as a matter of course, it is natural to believe the coupon value changes cause shifts of their conversion probabilities.
@@ -205,23 +200,25 @@ We need modeling in the calculation of the conversion probabilities. In the stud
 
 Also, currently we only use "age" and "last year frequency" as the 'explanatory variables' of the background models, but we can elaborate more here and get more granular probabilities determination. 
 
-As the background models do better jobs in the accurary, we are more likely to have better amount in ROI.
+As the background models do better jobs in the accuracy, we are more likely to have better amount in ROI.
 
-Reversively, we may be able to define the minimally-required modeling accuracy to hit the expected ROI. For me, this approach can give more satisfactory outcomes in senses that:
+Reversely, we may be able to define the minimally-required modeling accuracy to hit the expected ROI. For me, this approach can give more satisfactory outcomes in senses that:
 - we can make better communications with business-side stakeholders. The modeling metrics (e.g. accuracy, RSME etc.) are not a part of life for them but ROI is.
-- the baseline we want to beat is more visible and meaningful.
+- we can define our modeling baseline we want to beat as more visible and meaningful.
 
 <br />
 
 ## Heads-up when doing modeling.
-What we should worry is the probabilities we want here is the ones of conversion when the coupons will MAKE the customers consider of consuming coupons and buying something. It can be different from the one based on a normal predictive modeling from the observations.
+What we should worry here is the probabilities of conversion when the coupons will MAKE the customers consider of consuming coupons and buying something. It can be different from the ones the model PREDICTS from some observations.
 
 A famous examplet is <a href="https://www.wnycstudios.org/podcasts/otm/articles/spurious-correlations">Deaths by Swimming Pool Drowning vs. Nicholas Cage Films</a>.
 
 Per some study appeared in the link above, "the number of people who drowned by falling into a swimming-pool" and "the number of files Nicholas Cage appears in" is highly correlated. This means if we know the number of files with Nicholas, we (may) predict the number of drowns in the swimming pool; but it never means if we reduce the number of films with Nicholas, it can reduce the number of drowns. Nicholas's contribution can predict the accidents but not the cause of it.
 
-In the coupon study, we have to tackle the same possible disjoint. Is the coupon amount causing and driving the conversions?
+In the coupon study, we must tackle the same possible disjoint, and answer if the coupon amount causing and driving the conversions? The most widely accepted approach to answer this question the most accurately is doing the randomized control trial. In the coupon case, before we run the optimization study, we stochastically assign the direct mail types to the customers and see how the results differ between the assignment groups.
 
-This topic is more about the "causality" analysis, then to be out of scope of this document.
+As known well, this approach has a lot of shortcomings including the costs, loss of opportunities during the trial, limitation in the future change of the options etc., then hopefully we want to get them through the data we already got in the past.
+
+This topic is more about the "causality" analysis, then I would like to leave to another document.
 
 <br />
