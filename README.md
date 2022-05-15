@@ -189,7 +189,7 @@ Since there are many non-linear solvers, it is not a complete deal breaker but I
 
 ## Isn't ROI too low in the case study?
 
-Actually it is. It was 2.25% against the investment of 18,000 USD, which is around 400 USD. This amount of return agains as much investment as 18,000 USD is just a joke--particularly so when we remember we did not take the non-coupon cost or indirect cost out of consideration in this study.
+Actually it is. It was 2.25% against the investment of 18,000 USD, which is around 400 USD. This amount of return against as much investment as 18,000 USD is just a joke--particularly so when we remember we did not take the non-coupon cost or indirect cost out of consideration in this study.
 
 Based on this analysis, just giving up the plan is an idea: we are not a lot better off than executing plan and being disappointed later.
 
@@ -216,15 +216,12 @@ Reversively, we may be able to define the minimally-required modeling accuracy t
 ## Heads-up when doing modeling.
 What we should worry is the probabilities we want here is the ones of conversion when the coupons will MAKE the customers consider of consuming coupons and buying something. It can be different from the one based on a normal predictive modeling from the observations.
 
+A famous examplet is <a href="https://www.wnycstudios.org/podcasts/otm/articles/spurious-correlations">Deaths by Swimming Pool Drowning vs. Nicholas Cage Films</a>.
 
+Per some study appeared in the link above, "the number of people who drowned by falling into a swimming-pool" and "the number of files Nicholas Cage appears in" is highly correlated. This means if we know the number of files with Nicholas, we (may) predict the number of drowns in the swimming pool; but it never means if we reduce the number of films with Nicholas, it can reduce the number of drowns. Nicholas's contribution can predict the accidents but not the cause of it.
 
+In the coupon study, we have to tackle the same possible disjoint. Is the coupon amount causing and driving the conversions?
+
+This topic is more about the "causality" analysis, then to be out of scope of this document.
 
 <br />
-
-Causality
-
-
-change of coupon amount
-LIP -> metaheuristic
-
-MLOps
