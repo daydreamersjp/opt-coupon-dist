@@ -77,6 +77,7 @@ By optimizing ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D), we want t
 
 ### Constraint 2: expected total amount of coupon redeemed is within budget
 Since we only care about the amount the coupon is actually redeemed, the amount is the number of (expected) conversion, rather than the number of coupons sent.
+
 ![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%20%5Ccdot%20c_%7Bs%2Cd%7D%20%5Ccdot%20x_%7Bs%2Cd%7D%20%5Cleq%20max%20%5C%20budget)
 
 ### Constraint 3: letting any types of direct mail cover at least 10% of customers of every segment
