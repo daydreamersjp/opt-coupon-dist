@@ -65,8 +65,18 @@ By optimizing ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D), we want t
 
 ![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%28p_%7Bs%2Cd%7D-p_%7Bs%2C1%7D%29x_%7Bs%2Cd%7D)
 
-### Constraint 1: expected total amount of coupon is within budget
-![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%28p_%7Bs%2Cd%7D-p_%7Bs%2C1%7D%29x_%7Bs%2Cd%7D%20%5Cleq%20max%20%5C%20budget)
+### Constraint 1: the sum of probabilities to the same segment for all direct mail type is 1
+![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bd%20%5Cin%20D%7Dx_%7Bs%2Cd%7D%20%5C%20%5C%20%28s%5Cin%20S%29)
+
+### Constraint 2: expected total amount of coupon is within budget
+![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%20%5Ccdot%20c_%7Bs%2Cd%7D%20%5Ccdot%20x_%7Bs%2Cd%7D%20%5Cleq%20max%20%5C%20budget)
+
+### Constraint 3: letting any types of direct mail cover at least 10% of customers of every segment
+
+![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D%20%5Cgeq%200.1%20%5C%20%5C%20%28x%20%5Cin%20S%2C%20d%20%5Cin%20D%29)
+
+
+
 
 
 
@@ -81,5 +91,8 @@ By optimizing ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D), we want t
 How to get probability data? 
 Prediction including ML
 Causality
+
+ROI evaluation
+change of coupon amount
 
 MLOps
