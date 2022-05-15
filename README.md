@@ -181,7 +181,7 @@ The objective function will be like:
 
 ![](https://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Csum_%7Bs%20%5Cin%20S%7D%20%5Csum_%7Bd%20%5Cin%20D%7D%20N_%7Bs%7D%28p_%7Bs%2Cd%7D-p_%7Bs%2C1%7D%29x_%7Bs%2Cd%7D%20%5Ccdot%20unit%20%5C%20of%20%5C%20sales%7D%7Bbudget%7D)
 
-Because the decision variable appears both in numerator and denominator, it makes the objective non-linear. Then it goes out of the scope of Python library 'Pulp'.
+Because the decision variables appear both in numerator and denominator, it makes the objective non-linear. Then it goes out of the scope of Python library 'Pulp'.
 
 Since there are many non-linear solvers, it is not a complete deal breaker but I took a simplified approach here.
 
@@ -196,19 +196,33 @@ Based on this analysis, just giving up the plan is an idea: we are not a lot bet
 Another considerations may come if we:
 - do an adjustment of coupon value. This should be followed by the change of conversion probabilities; as a matter of course, it is natural to believe the coupon value changes cause shifts of their conversion probabilities.
 - do a better job in customer segmentation. Again this should lead to the redraft of conversion probabilities.
-- grow the customer base. This should be more business-driven approach and will need many got involved but could be fruitful when successful.
+- grow the customer base. This should be more business-driven approach and will need many people got involved but could be fruitful when successful.
+
+<br />
+
+## Where's the modeling opportunities?
+We need modeling in the calculation of the conversion probabilities. In the study above, we were given the probability table but it is something we can get only after some kind of analyses.
+
+Also, currently we only use "age" and "last year frequency" as the 'explanatory variables' of the background models, but we can elaborate more here and get more granular probabilities determination. 
+
+As the background models do better jobs in the accurary, we are more likely to have better amount in ROI.
+
+Reversively, we may be able to define the minimally-required modeling accuracy to hit the expected ROI. For me, this approach can give more satisfactory outcomes in senses that:
+- we can make better communications with business-side stakeholders. The modeling metrics (e.g. accuracy, RSME etc.) are not a part of life for them but ROI is.
+- the baseline we want to beat is more visible and meaningful.
+
+<br />
+
+## Heads-up when doing modeling.
+What we should worry is the probabilities we want here is the ones of conversion when the coupons will MAKE the customers consider of consuming coupons and buying something. It can be different from the one based on a normal predictive modeling from the observations.
 
 
 
 
+<br />
 
-Giving more flexibility
-- variable coupon values -> natural to assume the conversion probability will also change, but need predictive modeling here, like using ML models.
-How to get probability data? 
-Prediction including ML
 Causality
 
- (remember here we parameterize the sales per conversion is 30 USD. If the unit sales is different, the ROI curve is also different)
 
 change of coupon amount
 LIP -> metaheuristic
