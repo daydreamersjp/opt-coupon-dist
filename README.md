@@ -71,19 +71,20 @@ Let ![](https://latex.codecogs.com/gif.latex?N_%7Bs%7D) denote the number of cus
 By optimizing ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D), we want to maximize the increase of conversion by sending direct mails. This leads the maximization of the following:
 
 ![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%28p_%7Bs%2Cd%7D-p_%7Bs%2C1%7D%29x_%7Bs%2Cd%7D)
-
+\
 ### Constraint 1: the sum of probabilities to the same segment for all direct mail type is 1
 ![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bd%20%5Cin%20D%7Dx_%7Bs%2Cd%7D%20%5C%20%5C%20%28s%5Cin%20S%29)
-
+\
 ### Constraint 2: expected total amount of coupon redeemed is within budget
 Since we only care about the amount the coupon is actually redeemed, the amount is the number of (expected) conversion, rather than the number of coupons sent.
 
 ![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%20%5Ccdot%20c_%7Bs%2Cd%7D%20%5Ccdot%20x_%7Bs%2Cd%7D%20%5Cleq%20max%20%5C%20budget)
-
+\
 ### Constraint 3: letting any types of direct mail cover at least 10% of customers of every segment
 
 ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D%20%5Cgeq%200.1%20%5C%20%5C%20%28x%20%5Cin%20S%2C%20d%20%5Cin%20D%29)
-
+\
+\
 
 # Result
 ## Fixed budget
@@ -100,7 +101,7 @@ xxxxx
 And here's the heatmap of ![](https://latex.codecogs.com/gif.latex?N_%7Bs%7Dx_%7Bs%2Cd%7D)
 
 xxxxx
-
+\
 ## Variable budget and finding optimal
 xxxxxxxxxxxxx
 
