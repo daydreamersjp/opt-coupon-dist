@@ -83,7 +83,12 @@ Now let's define the following exogenous parameters:
 - ![](https://latex.codecogs.com/gif.latex?c_%7Bdm1%7D%20%3D%200), ![](https://latex.codecogs.com/gif.latex?c_%7Bdm2%7D%20%3D%2010), and ![](https://latex.codecogs.com/gif.latex?c_%7Bdm3%7D%20%3D%2020).
 - ![](https://latex.codecogs.com/gif.latex?max%20%5C%20budget%20%3D%2010%2C000)
 
+This notebook (XXXXXXXXXXXXXXXXXXXXXXXX) gives the modeling walkthrough using `Pulp`.
 
+Here's the heatmap of ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D).
+xxxxx
+
+And here's the heatmap of ![](https://latex.codecogs.com/gif.latex?N_%7Bs%7Dx_%7Bs%2Cd%7D)
 xxxxx
 
 
