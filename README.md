@@ -101,13 +101,15 @@ This notebook (./opt_step_by_step.ipynb) gives the modeling walkthrough using `P
 
 Here's the heatmap of ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D).
 
-The results indicate sending the highest age50\~ group
+The results indicate that for the group with no purchase last year except for age20\~34, we should send some coupon and particularly the group age50\~ will appreciate the higher valued coupon more. 
 
 And here's the heatmap of ![](https://latex.codecogs.com/gif.latex?N_%7Bs%7Dx_%7Bs%2Cd%7D)
 
-xxxxx
+<br /><br />
 
 ## Variable budget and finding optimal
+
+
 xxxxxxxxxxxxx
 
 ## Even variable coupon value and finding overall optimal
