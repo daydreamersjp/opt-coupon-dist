@@ -66,25 +66,30 @@ Let ![](https://latex.codecogs.com/gif.latex?c_%7Bd%7D) denote the amount of cou
 
 Let ![](https://latex.codecogs.com/gif.latex?N_%7Bs%7D) denote the number of customers belonging to the segment ![](https://latex.codecogs.com/gif.latex?s).
 
+<br /><br />
+
 ## Formulate objectives and constraints
 ### Objective: maximizing the expected increase of conversion
 By optimizing ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D), we want to maximize the increase of conversion by sending direct mails. This leads the maximization of the following:
 
 ![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%28p_%7Bs%2Cd%7D-p_%7Bs%2C1%7D%29x_%7Bs%2Cd%7D)
-\
+<br /><br />
+
 ### Constraint 1: the sum of probabilities to the same segment for all direct mail type is 1
 ![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bd%20%5Cin%20D%7Dx_%7Bs%2Cd%7D%20%5C%20%5C%20%28s%5Cin%20S%29)
-\
+<br /><br />
+
 ### Constraint 2: expected total amount of coupon redeemed is within budget
 Since we only care about the amount the coupon is actually redeemed, the amount is the number of (expected) conversion, rather than the number of coupons sent.
 
 ![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%20%5Ccdot%20c_%7Bs%2Cd%7D%20%5Ccdot%20x_%7Bs%2Cd%7D%20%5Cleq%20max%20%5C%20budget)
-\
+<br /><br />
+
 ### Constraint 3: letting any types of direct mail cover at least 10% of customers of every segment
 
 ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D%20%5Cgeq%200.1%20%5C%20%5C%20%28x%20%5Cin%20S%2C%20d%20%5Cin%20D%29)
-\
-\
+
+<br /><br />
 
 # Result
 ## Fixed budget
@@ -92,20 +97,21 @@ Now let's define the following exogenous parameters:
 - ![](https://latex.codecogs.com/gif.latex?c_%7Bdm1%7D%20%3D%200), ![](https://latex.codecogs.com/gif.latex?c_%7Bdm2%7D%20%3D%2010), and ![](https://latex.codecogs.com/gif.latex?c_%7Bdm3%7D%20%3D%2020).
 - ![](https://latex.codecogs.com/gif.latex?max%20%5C%20budget%20%3D%2010%2C000)
 
-This notebook (XXXXXXXXXXXXXXXXXXXXXXXX) gives the modeling walkthrough using `Pulp`.
+This notebook (./opt_step_by_step.ipynb) gives the modeling walkthrough using `Pulp`. 
 
 Here's the heatmap of ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D).
 
-xxxxx
+The results indicate sending the highest age50\~ group
 
 And here's the heatmap of ![](https://latex.codecogs.com/gif.latex?N_%7Bs%7Dx_%7Bs%2Cd%7D)
 
 xxxxx
-\
+
 ## Variable budget and finding optimal
 xxxxxxxxxxxxx
 
-
+## Even variable coupon value and finding overall optimal
+XXXXXXXXXXXXX
 
 # What's Next
 
@@ -115,5 +121,6 @@ Causality
 
 ROI evaluation
 change of coupon amount
+LIP -> metaheuristic
 
 MLOps
