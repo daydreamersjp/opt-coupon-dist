@@ -105,15 +105,15 @@ For the ease of the problem, let's first remove some flexibility and define the 
 
 This notebook (./opt_step_by_step.ipynb) gives the modeling walkthrough using `Pulp`. 
 
-Here's the heatmap of ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D).
+Here's the heatmap of the distribution probabilities (![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D)).
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+<img src="./data/image/heatmap_dm_proportion_10000.jpg" width=750>
 
 The results indicate that for the group with no purchase last year except for age20\~34, we should send some coupon and particularly the group age50\~ will appreciate the higher valued coupon more. 
 
-And here's the heatmap of ![](https://latex.codecogs.com/gif.latex?N_%7Bs%7Dx_%7Bs%2Cd%7D)
+And here's the heatmap of the count of mails (![](https://latex.codecogs.com/gif.latex?N_%7Bs%7D%20%5Ccdot%20x_%7Bs%2Cd%7D)).
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+<img src="./data/image/heatmap_dm_number_10000.jpg" width=750>
 
 <br />
 
