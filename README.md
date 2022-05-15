@@ -7,10 +7,13 @@
 
 Imagine you are tasked to decide the amount of budget for the use of direct mail marketing of one of your EC sites.
 
-![]("./data/image/diagram_dm_sending.jpg")
+<img src="./data/image/diagram_dm_sending.jpg" width=500>
 
 
 This repository gives a sample 
+
+<img src="./data/image/diagram_optimization_walkflow.jpg" width=750>
+
 
 <br /><br />
 
@@ -32,7 +35,7 @@ There are two data files used:
 | age_cat     | Age category of customers:<br /> - age\~19<br /> - age20\~34<br /> - age35\~49<br /> - age50\~                                                              |
 | freq_cat    | Category by number of conversion in last year:<br /> - freq0: No conversion<br /> - freq1: Once<br /> - freq2: Twice<br /> - freq3\~: Three times or more |
 
-![](./data/image/customer_heatmap.jpg)
+<img src="./data/image/customer_heatmap.jpg" width=300>
 
 
 ## Conversion probability data
@@ -46,9 +49,9 @@ There are two data files used:
 | prob_dm2   | Probability of conversion when customers receive a direct mail with 10 USD coupon *(DM2)*.                                                                  |
 | prob_dm3   | Probability of conversion when customers receive a direct mail with 20 USD coupon *(DM3)*.                                                                  |
 
-![](./data/image/segment_prob.jpg)
+<img src="./data/image/segment_prob.jpg" width=400>
 
-![](./data/image/parallel_plot_of_conversion_probability.jpg)
+<img src="./data/image/parallel_plot_of_conversion_probability.jpg" width=400>
 
 <br /><br />
 
@@ -132,6 +135,12 @@ Now there we have ![](https://latex.codecogs.com/gif.latex?unit%20%5C%20sales) a
 - ![](https://latex.codecogs.com/gif.latex?unit%20%5C%20sales%3D30)
 
 <br />
+
+<img src="./data/image/diagram_optimize_budget.jpg" width=750>
+
+The approach here is to repeat the optimizations again and again over the multiple budget inputs, calculate the ROI for each, and choose the scenario with the largest ROI.
+
+The notebook XXXXXXXXXXXXXXXXXXX gives the walkthrough of this experiment. The optimizations were repeated every 1,000 USD increment from 5,000 USD to 50,000 USD.
 
 
 xxxxxxxxxxxxx
