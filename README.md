@@ -51,7 +51,7 @@ There are two data files used:
 
 # Model
 ## Define notations
-Let $$x_{s,d}$$ denote the probability to send the customer segment $$s$$ the DM type $$d$$, where $$s \in \{1,2,...,16\} = S$$ and $$d \in \{dm1,dm2,dm3\} = D$$, which means there are 16 different types of customers (in this time's example, defined by customer age group and last year conversion frequency group; and three different types of direct mail. The same index notations will be used hereinafter.
+Let ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D) denote the probability to send the customer segment $$s$$ the DM type $$d$$, where $$s \in \{1,2,...,16\} = S$$ and $$d \in \{dm1,dm2,dm3\} = D$$, which means there are 16 different types of customers (in this time's example, defined by customer age group and last year conversion frequency group; and three different types of direct mail. The same index notations will be used hereinafter.
 
 Let $$p_{s,d}$$ denote the probability of conversion when the customers belonging to segment $$s$$ receive the direct mail of type $$d$$.
 
