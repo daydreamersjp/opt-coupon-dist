@@ -93,7 +93,7 @@ Since we only care about the amount the coupon is actually redeemed, the amount 
 
 # Result
 ## Fixed budget
-Now let's define the following exogenous parameters:
+For the ease of the problem, let's first remove some flexibility and define the followings as exogenous parameters:
 - ![](https://latex.codecogs.com/gif.latex?c_%7Bdm1%7D%20%3D%200), ![](https://latex.codecogs.com/gif.latex?c_%7Bdm2%7D%20%3D%2010), and ![](https://latex.codecogs.com/gif.latex?c_%7Bdm3%7D%20%3D%2020).
 - ![](https://latex.codecogs.com/gif.latex?max%20%5C%20budget%20%3D%2010%2C000)
 
@@ -108,15 +108,24 @@ And here's the heatmap of ![](https://latex.codecogs.com/gif.latex?N_%7Bs%7Dx_%7
 <br /><br />
 
 ## Variable budget and finding optimal
+Then let's see how we can solve the original question: defining the optimal amount of budget. Now the coupon values are the only exogenous parameters and the maximum budget is a variable.
+
+Then what we next think of should be "to what we optimize?" We are likely to have monotonically more conversions as the budget increases, because it will give chances to send more coupon and more coupon results in more conversions. So, if we say the increase of conversions is what we target, it will end with "the best coupon for everyone". Intuitively this is not right, but why?
+
+This is because we first distribute the coupons to the customers with the most possiblity of conversions (i.e. "low-hanging fruit") and as we keep going, the fruits go higher and higher until in the end we will reach the point when it makes no sense to add budget.
+
+If we formulate this situation, we want to stop the budget at the point when the expected increase of sales from conversions will get less than the increase of budget: meaning even if we add more budget the expected sales is less than the additional budget--we will lose money if we go farther.
+
 
 
 xxxxxxxxxxxxx
 
-## Even variable coupon value and finding overall optimal
-XXXXXXXXXXXXX
 
 # What's Next
 
+Giving more flexibility
+- variable budget -> objective function. no longer linear.
+- variable coupon values -> natural to assume the conversion probability will also change, but need predictive modeling here, like using ML models.
 How to get probability data? 
 Prediction including ML
 Causality
