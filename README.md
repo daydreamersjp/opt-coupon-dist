@@ -108,14 +108,27 @@ And here's the heatmap of ![](https://latex.codecogs.com/gif.latex?N_%7Bs%7Dx_%7
 <br /><br />
 
 ## Variable budget and finding optimal
-Then let's see how we can solve the original question: defining the optimal amount of budget. Now the coupon values are the only exogenous parameters and the maximum budget is a variable.
+Then let's see how we can solve the original question: defining the optimal amount of budget.
 
 Then what we next think of should be "to what we optimize?" We are likely to have monotonically more conversions as the budget increases, because it will give chances to send more coupon and more coupon results in more conversions. So, if we say the increase of conversions is what we target, it will end with "the best coupon for everyone". Intuitively this is not right, but why?
 
 This is because we first distribute the coupons to the customers with the most possiblity of conversions (i.e. "low-hanging fruit") and as we keep going, the fruits go higher and higher until in the end we will reach the point when it makes no sense to add budget.
 
+<br />
+
 If we formulate this situation, we want to stop the budget at the point when the expected increase of sales from conversions will get less than the increase of budget: meaning even if we add more budget the expected sales is less than the additional budget--we will lose money if we go farther.
 
+This can be discussed looking at the ROI (return on investment).
+
+![](https://latex.codecogs.com/gif.latex?ROI%20%3D%20%5Cfrac%7Bexpected%20%5C%20increase%20%5C%20of%20%5C%20sales%7D%7Bbudget%20%5C%20amount%7D%20%3D%20%5Cfrac%7Bexpected%20%5C%20increase%20%5C%20of%20%5C%20conversion*unit%20%5C%20sales%7D%7Bbudget%20%5C%20amount%7D)
+
+And maximizing ROI will give the cutoff point to increase the budget. There, the increase of denominator gets more than the increase of numerator.
+
+Now there we have ![](https://latex.codecogs.com/gif.latex?unit%20%5C%20sales) as a new exogenous parameter. These are all the exogenous parameters and their inputs for our case study this time:
+- ![](https://latex.codecogs.com/gif.latex?c_%7Bdm1%7D%20%3D%200), ![](https://latex.codecogs.com/gif.latex?c_%7Bdm2%7D%20%3D%2010), and ![](https://latex.codecogs.com/gif.latex?c_%7Bdm3%7D%20%3D%2020).
+- ![](https://latex.codecogs.com/gif.latex?unit%20%5C%20sales%3D30)
+
+<br />
 
 
 xxxxxxxxxxxxx
