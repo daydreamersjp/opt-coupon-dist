@@ -7,10 +7,13 @@
 
 Imagine you are tasked to decide the amount of budget for the use of direct mail marketing of one of your EC sites.
 
-![]("./data/image/diagram_dm_sending.jpg")
+<img src="./data/image/diagram_dm_sending.jpg" width=500>
 
 
 This repository gives a sample 
+
+<img src="./data/image/diagram_optimization_walkflow.jpg" width=750>
+
 
 <br /><br />
 
@@ -32,7 +35,7 @@ There are two data files used:
 | age_cat     | Age category of customers:<br /> - age\~19<br /> - age20\~34<br /> - age35\~49<br /> - age50\~                                                              |
 | freq_cat    | Category by number of conversion in last year:<br /> - freq0: No conversion<br /> - freq1: Once<br /> - freq2: Twice<br /> - freq3\~: Three times or more |
 
-![](./data/image/customer_heatmap.jpg)
+<img src="./data/image/customer_heatmap.jpg" width=300>
 
 
 ## Conversion probability data
@@ -46,9 +49,9 @@ There are two data files used:
 | prob_dm2   | Probability of conversion when customers receive a direct mail with 10 USD coupon *(DM2)*.                                                                  |
 | prob_dm3   | Probability of conversion when customers receive a direct mail with 20 USD coupon *(DM3)*.                                                                  |
 
-![](./data/image/segment_prob.jpg)
+<img src="./data/image/segment_prob.jpg" width=400>
 
-![](./data/image/parallel_plot_of_conversion_probability.jpg)
+<img src="./data/image/parallel_plot_of_conversion_probability.jpg" width=400>
 
 <br /><br />
 
@@ -79,7 +82,7 @@ By optimizing ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D), we want t
 <br /><br />
 
 ### Constraint 1: the sum of probabilities to the same segment for all direct mail type is 1
-![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bd%20%5Cin%20D%7Dx_%7Bs%2Cd%7D%20%5C%20%5C%20%28s%5Cin%20S%29)
+![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bd%20%5Cin%20D%7Dx_%7Bs%2Cd%7D%3D1%20%5C%20%5C%20%28s%20%5Cin%20S%29)
 <br /><br />
 
 ### Constraint 2: expected total amount of coupon redeemed is within budget
@@ -104,11 +107,15 @@ This notebook (./opt_step_by_step.ipynb) gives the modeling walkthrough using `P
 
 Here's the heatmap of ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D).
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
 The results indicate that for the group with no purchase last year except for age20\~34, we should send some coupon and particularly the group age50\~ will appreciate the higher valued coupon more. 
 
 And here's the heatmap of ![](https://latex.codecogs.com/gif.latex?N_%7Bs%7Dx_%7Bs%2Cd%7D)
 
-<br /><br />
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+<br />
 
 ## Variable budget and finding optimal
 Then let's see how we can solve the original question: defining the optimal amount of budget.
@@ -133,8 +140,35 @@ Now there we have ![](https://latex.codecogs.com/gif.latex?unit%20%5C%20sales) a
 
 <br />
 
+<img src="./data/image/diagram_optimize_budget.jpg" width=750>
 
-xxxxxxxxxxxxx
+The approach here is to repeat the optimizations again and again over the multiple budget inputs, calculate the ROI for each, and choose the scenario with the largest ROI.
+
+It's worth noting that under each budget scenario, the mail distribution is always optimized so that it will generate the most conversion increase. Therefore, the mail distribution ratios are all different per scenario.
+
+<br />
+
+The notebook XXXXXXXXXXXXXXXXXXX gives the walkthrough of this experiment. The optimizations were repeated every 1,000 USD increment from 5,000 USD to 50,000 USD.
+
+This chart shows the increase of the conversion against the increase of the budget.
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+The increase of the conversion is slightly away upward from the diagonal line, which means the uplift of the conversions decays as "low-hanging fruit" is trimmed earlier phase.
+
+<br />
+
+Then this chart shows the ROIs.
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+Now we got the champion at the budget of 18,000 USD. If the budget is less than 18,000 USD we miss further gaining opportunity, while if the budget is more than 18,000 USD we will just lose money because we cannot expect the sales is more than we pay.
+
+<br />
+
+Finally we see the grand best solution for the mail distribution with budget 18,000 USD.
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 <br /><br />
 
@@ -146,6 +180,8 @@ Giving more flexibility
 How to get probability data? 
 Prediction including ML
 Causality
+
+ (remember here we parameterize the sales per conversion is 30 USD. If the unit sales is different, the ROI curve is also different)
 
 ROI evaluation
 change of coupon amount
