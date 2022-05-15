@@ -46,7 +46,7 @@ There are two data files used:
 
 ![](./data/image/segment_prob.jpg)
 
-![](./data/image/parallel plot of conversion probability.jpg)
+![](./data/image/parallel_plot_of_conversion_probability.jpg)
 
 
 # Model
