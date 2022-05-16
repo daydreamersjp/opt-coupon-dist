@@ -1,10 +1,34 @@
-# Introduction
-Imagine you are tasked to decide the amount of budget for the use of direct mail marketing of one of your EC sites.
+# Project Background
 
-<img src="./data/image/diagram_dm_sending.jpg" width=500>
+Imagine you are tasked to decide the amount of budget for the use of direct mail marketing of one of your EC sites. 
 
+We will start a buy again The budget is to be used by coupons attached to the direct mails. 
 
-This repository gives a sample 
+<img src="./data/image/coupon_image.jpg" width=750>
+
+<br />
+
+There are three possible options in the form of direct mail + coupon:
+- no direct mail (status quo)
+- direct mail with 10 USD coupon
+- direct mail with 20 USD coupon
+We assume that we already know how likely the customers are to buy from our EC site once they receive our coupons (including the case of no coupon), in a form of probabilities (see "Data" section below).
+
+<br />
+
+The marketing team worries the possible repulation loss when the coupons were only given to the specific customer groups, so would like to send coupons to some proportion of customers no matte what (i.e. 'fairness'). 
+
+This approach will also helpful as the data collection necessary in the future post campaign study.
+
+<img src="./data/image/diagram_dm_sending.jpg" width=400>
+
+<br />
+
+As we know the possibilities of the conversion to each coupon amount per customer segmentations through preliminary analyses, we concluded we would determine how much proportion of customer in each customer segmentations should receive each type of coupons.
+
+Through our customer base data and preliminary analysis propabilities 
+
+<br />
 
 <img src="./data/image/diagram_optimization_walkflow.jpg" width=750>
 
@@ -30,6 +54,9 @@ There are two data files used:
 
 <img src="./data/image/customer_heatmap.jpg" width=300>
 
+There are 5,000 customers in the data.
+
+<br />
 
 ## Conversion probability data
 
