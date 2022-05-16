@@ -2,13 +2,13 @@
 
 Imagine you are tasked to decide the amount of budget for the use of direct mail marketing of one of your EC sites. 
 
-We will start a buy again The budget is to be used by coupons attached to the direct mails. 
+We consider starting a coupon campaign attached to direct mail. The budget is to cover the redeem of coupons.
 
-<img src="./data/image/coupon_image.jpg" width=750>
+<img src="./data/image/coupon_image.jpg" width=400>
 
 <br />
 
-There are three possible options in the form of direct mail + coupon:
+There are three possible types of direct mail + coupon:
 - no direct mail (status quo)
 - direct mail with 10 USD coupon
 - direct mail with 20 USD coupon
@@ -16,32 +16,32 @@ We assume that we already know how likely the customers are to buy from our EC s
 
 <br />
 
-The marketing team worries the possible repulation loss when the coupons were only given to the specific customer groups, so would like to send coupons to some proportion of customers no matte what (i.e. 'fairness'). 
+The marketing team worries the possible reputation loss when the coupons were only given to the specific customer groups, so would like to send coupons to some proportion of customers no matte what (i.e. 'fairness'). 
 
-This approach will also helpful as the data collection necessary in the future post campaign study.
+This approach will also helpful for the future campaign planning because we can collect the customers reaction to coupons and refine the estimates of conversion probabilities.
 
-<img src="./data/image/diagram_dm_sending.jpg" width=400>
+
+<img src="./data/image/diagram_dm_sending.jpg" width=600>
 
 <br />
 
-As we know the possibilities of the conversion to each coupon amount per customer segmentations through preliminary analyses, we concluded we would determine how much proportion of customer in each customer segmentations should receive each type of coupons.
+As we knew the probabilities of the conversion by each coupon amount per customer segmentation through preliminary analyses, we concluded we would plan the coupon distributions in advance.
 
-Through our customer base data and preliminary analysis propabilities 
+The planning will be done through the numeric optimization using Python library named 'Pulp', which can very easily handle the linear programming optimization problems.
 
 <br />
 
 <img src="./data/image/diagram_optimization_walkflow.jpg" width=750>
 
-
 <br /><br />
 
 # Data
-Data was copied from this repository (https://github.com/ohmsha/PyOptBook/tree/main/4.coupon)
+Data was copied from this repository (https://github.com/ohmsha/PyOptBook/tree/main/4.coupon). I imagine this data is artificially created one for demonstration.
 
 There are two data files used:
 
 - customer data ("./data/external/customers.csv")
-- conversion probablity data ("./data/external/visit_probability.csv")
+- conversion probability  data ("./data/external/visit_probability.csv")
 
 
 ## Customer data
@@ -65,9 +65,9 @@ There are 5,000 customers in the data.
 | age_cat    | Age category of customers:<br /> - age\~19<br /> - age20\~34<br /> - age35\~49<br /> - age50\~                                                               |
 | freq_cat   | Category by number of conversion in last year:<br /> - freq0: No conversion<br /> - freq1: Once<br /> - freq2: Twice<br /> - freq3~: Three times or more |
 | segment_id | Unique ID of customer segment for unique combination of age_cat and freq_cat (An integer between 1-16).                                    |
-| prob_dm1   | Probability of conversion when customers receive no direct mail *(DM1)*.                                                                      |
-| prob_dm2   | Probability of conversion when customers receive a direct mail with 10 USD coupon *(DM2)*.                                                                  |
-| prob_dm3   | Probability of conversion when customers receive a direct mail with 20 USD coupon *(DM3)*.                                                                  |
+| prob_dm1   | Probability of conversion when customers receive no direct mail *(dm1)*.                                                                      |
+| prob_dm2   | Probability of conversion when customers receive a direct mail with 10 USD coupon *(dm2)*.                                                                  |
+| prob_dm3   | Probability of conversion when customers receive a direct mail with 20 USD coupon *(dm3)*.                                                                  |
 
 <img src="./data/image/segment_prob.jpg" width=400>
 
@@ -218,6 +218,7 @@ Based on this analysis, just giving up the plan is an idea: we will be a lot bet
 Another considerations may come if we:
 - do an adjustment of coupon value. This should be followed by the change of conversion probabilities; as a matter of course, it is natural to believe the coupon value changes cause shifts of their conversion probabilities.
 - do a better job in customer segmentation. Again this should lead to the redraft of conversion probabilities.
+- take this as a "door-knocking" campaign and believe they will come back more in the future. We may be able to take this return-to-shop effect if we incorporate the LTV (Lifetime Value) as a basis of our optimization study. Of course, it will require more assumptions and preliminary analyses.
 - grow the customer base. This should be more business-driven approach and will need many people got involved but could be fruitful when successful.
 
 <br />
