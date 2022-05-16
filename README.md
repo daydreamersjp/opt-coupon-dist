@@ -80,9 +80,9 @@ There are 5,000 customers in the data.
 Let ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D) denote the probability to send the customer segment ![](https://latex.codecogs.com/gif.latex?s) the direct mail type ![](https://latex.codecogs.com/gif.latex?d), where ![](https://latex.codecogs.com/gif.latex?s%20%5Cin%20%5C%7B1%2C2%2C...%2C16%5C%7D%20%3D%20S) and ![](https://latex.codecogs.com/gif.latex?d%20%5Cin%20%5C%7Bdm1%2Cdm2%2Cdm3%5C%7D%20%3D%20D), which means there are 16 different types of customers (in this time's example, defined by customer age group and last year conversion frequency group; and three different types of direct mail.
 
 Each direct mail type represents:
-- ![](https://latex.codecogs.com/gif.latex?dm1): No direct mail sent. The default option.
-- ![](https://latex.codecogs.com/gif.latex?dm2): A direct mail with with 10 USD coupon sent.
-- ![](https://latex.codecogs.com/gif.latex?dm3): A direct mail with with 20 USD coupon sent.
+- ![](https://latex.codecogs.com/gif.latex?dm1): No direct mail sent (status quo).
+- ![](https://latex.codecogs.com/gif.latex?dm2): A direct mail with 10 USD coupon sent.
+- ![](https://latex.codecogs.com/gif.latex?dm3): A direct mail with 20 USD coupon sent.
 
 The same index notations will be used hereinafter.
 
