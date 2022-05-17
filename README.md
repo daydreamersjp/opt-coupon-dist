@@ -163,9 +163,19 @@ Then let's move the budget amount.
 - ![](https://latex.codecogs.com/gif.latex?c_%7Bdm1%7D%20%3D%200), ![](https://latex.codecogs.com/gif.latex?c_%7Bdm2%7D%20%3D%2010), and ![](https://latex.codecogs.com/gif.latex?c_%7Bdm3%7D%20%3D%2020).
 - ![](https://latex.codecogs.com/gif.latex?unit%20%5C%20sales%3D30)
 
+<br />
 
+The notebook XXXXXXXXXXXXXXXXXXX gives the code of this optimization.
 
+The optimized budget amount is 18,900 USD.
 
+<img src="./data/image/heatmap_dm_proportion_number_18900.jpg" width=750>
+
+In this case, the increase of the profit against the status quo is 400 USD. Alright, it is positive this time.
+
+<br />
+
+To visualize how changing budget amount maximizes the profit, I also ran the optimization repeatedly on every 1,000 USD increment from 5,000 USD to 50,000 USD.
 
 This chart shows the increase of the conversion against the increase of the budget.
 
@@ -175,7 +185,7 @@ Both lines are monotonically increasing but the increase of the conversion is sl
 
 <br />
 
-Then this chart shows the ROIs.
+Then this chart shows the increase of profit.
 
 <img src="./data/image/scatter_plot_budget_vs_roi.jpg" width=500>
 
