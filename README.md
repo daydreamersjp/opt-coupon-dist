@@ -95,10 +95,11 @@ Let ![](https://latex.codecogs.com/gif.latex?N_%7Bs%7D) denote the number of cus
 <br /><br />
 
 ## Formulate objectives and constraints
-### Objective: maximizing the expected increase of conversion
-By optimizing ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D), we want to maximize the increase of conversion by sending direct mails. This leads the maximization of the following:
+### Objective: maximizing the expected profit
+We are happiest when the budget creates the most increase in profit. For simplicity, the profit in this project is to be defined:
 
-![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%28p_%7Bs%2Cd%7D-p_%7Bs%2C1%7D%29x_%7Bs%2Cd%7D)
+![](https://latex.codecogs.com/gif.latex?increase%20%5C%20of%20%5C%20sales%20-%20coupon%20%5C%20redeemed%20%3D%20%5Csum_%7Bs%20%5Cin%20S%7D%20%5Csum_%7Bd%20%5Cin%20D%7D%20N_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cd%7D%5Ccdot%20x_%7Bs%2Cd%7D%20%5Ccdot%20unit%20%5C%20sales%20-%20%5Csum_%7Bs%20%5Cin%20S%7D%20%5Csum_%7Bd%20%5Cin%20D%7D%20N_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cd%7D%5Ccdot%20x_%7Bs%2Cd%7D%20%5Ccdot%20c_%7Bd%7D)
+
 <br /><br />
 
 ### Constraint 1: the sum of probabilities to the same segment for all direct mail type is 1
