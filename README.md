@@ -167,7 +167,7 @@ Then let's move the budget amount.
 
 <br />
 
-The notebook XXXXXXXXXXXXXXXXXXX gives the code of this optimization.
+The notebook (./opt_all.ipynb) gives the code of this optimization.
 
 The optimized budget amount is 18,900 USD.
 
@@ -189,7 +189,7 @@ To visualize how changing budget amount maximizes the profit, the following anal
 
 The profit increase hits the ceiling at 18,900 USD and no longer grows as the budget is added. This means the budget is no longer used for coupon and left without untouched, because sending coupon to more customers will not add profit but let us lose money.
 
-Of cource, this is not a good thing considering the untouched budget can be used for the purposes other than this coupon campaign. So, it would be better to give just 18,900 USD for this campaign.
+Of course, this is not a good thing considering the untouched budget can be used for the purposes other than this coupon campaign. So, it would be better to give just 18,900 USD for this campaign.
 
 <br />
 
@@ -200,7 +200,7 @@ Actually it is. It was 2.15% against the investment of 18,900 USD, which is 400 
 Based on this analysis, just giving up the plan is an idea: we will be a lot better off than executing plan and being disappointed later.
 
 Another considerations may come if we:
-- try to increase unit sales. This is actually a big game changer. Changing unit sales from 30 USD to 40 USD will raise the ROI up to 25%. So, efforts to increae the customer spending when they buy something from us will be largely paid off. 
+- try to increase unit sales. This is actually a big game changer. Changing unit sales from 30 USD to 40 USD will raise the ROI up to 25% (budget: 45,700 USD, profit increase: 11,500 USD.) So, efforts to increae the customer spending when they buy something from us will be largely paid off. 
 - take this as a "door-knocking" campaign and believe they will come back more in the future. We may be able to take this return-to-shop effect if we incorporate the LTV (Lifetime Value) as a basis of our optimization study. Of course, it will require more assumptions and preliminary analyses.
 - do an adjustment of coupon value. This should be followed by the change of conversion probabilities; as a matter of course, it is natural to believe the coupon value changes cause shifts of their conversion probabilities.
 - do a better job in customer segmentation. Again this should lead to the redraft of conversion probabilities.
@@ -214,16 +214,16 @@ Also, currently we only use "age" and "last year frequency" as the 'explanatory 
 
 The better jobs the background models do in the customer targeting, we are more likely to have better amount in the ROI.
 
-Reversely, we may be able to define the minimally-required modeling accuracy to hit the expected ROI. Tthis approach may give more satisfactory outcomes in senses that:
+Reversely, we may be able to define the minimally-required modeling accuracy to hit the expected ROI. This approach may give more satisfactory outcomes in senses that:
 - we can make better communications with business-side stakeholders. The modeling metrics (e.g. accuracy, RSME etc.) are not a part of life for them but ROI is.
-- we can define our modeling baseline we want to beat as more visible and meaningful.
+- we can define our performance baseline we want to beat in the modeling as more visible and meaningful.
 
 <br />
 
 ## Heads-up when doing modeling.
 What we should worry here is the probabilities of conversion when the coupons will MAKE the customers consider of consuming coupons and buying something. It can be different from the ones the model PREDICTS from some observations.
 
-A famous examplet is <a href="https://www.wnycstudios.org/podcasts/otm/articles/spurious-correlations">Deaths by Swimming Pool Drowning vs. Nicholas Cage Films</a>.
+A famous example is <a href="https://www.wnycstudios.org/podcasts/otm/articles/spurious-correlations">Deaths by Swimming Pool Drowning vs. Nicholas Cage Films</a>.
 
 Per some study appeared in the link above, "the number of people who drowned by falling into a swimming-pool" and "the number of files Nicholas Cage appears in" is highly correlated. This means if we know the number of files with Nicholas, we (may) predict the number of drowns in the swimming pool; but it never means if we reduce the number of films with Nicholas, it can reduce the number of drowns. Nicholas's contribution can predict the accidents but not the cause of it.
 
