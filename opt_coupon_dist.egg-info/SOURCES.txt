@@ -1,0 +1,6 @@
+setup.py
+opt_coupon_dist.egg-info/PKG-INFO
+opt_coupon_dist.egg-info/SOURCES.txt
+opt_coupon_dist.egg-info/dependency_links.txt
+opt_coupon_dist.egg-info/requires.txt
+opt_coupon_dist.egg-info/top_level.txt
