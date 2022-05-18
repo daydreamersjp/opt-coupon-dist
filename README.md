@@ -180,45 +180,30 @@ In this case, the increase of the profit against the status quo is 400 USD. Alri
 # Let's Review the Results
 ## What's happening before and after the optimal budget amount.
 
-To visualize how changing budget amount maximizes the profit, I also ran the optimization repeatedly on every 1,000 USD increment from 5,000 USD to 30,000 USD.
+To visualize how changing budget amount maximizes the profit, the following analysis is based on the repeated optimization using the same logic on every 1,000 USD increment from 5,000 USD to 30,000 USD.
 
-This chart shows the increase of the incremental profit ( = profit with optimal coupon plan - profit with no coupon) over the budget amounts.
-
-<img src="./data/image/scatter_plot_budget_and_conversion_increase_2.jpg" width=400>
-<img src="./data/image/scatter_plot_budget_vs_profit_increase.jpg" width=400>
+<span style="white-space:nowrap">
+<img src="./data/image/scatter_plot_budget_and_conversion_increase_2.jpg" height=300>
+<img src="./data/image/scatter_plot_budget_vs_profit_increase.jpg" height=300>
+</span>
 
 The profit increase hits the ceiling at 18,900 USD and no longer grows as the budget is added. This means the budget is no longer used for coupon and left without untouched, because sending coupon to more customers will not add profit but let us lose money.
 
-Of cource, this is not a good thing considering the untouched budget can be used for the purposes other than this coupon campaign.
-
-
-<br />
-
-## Can we use budget amount as the decision variable and ROI as the objective?
-
-We can use budget amount as another decision variable and ROI as the objective of the problem. Actually it is more direct. The only reason I did not do that way was because it would make the program non-linear.
-
-The objective function will be like:
-
-![](https://latex.codecogs.com/gif.latex?%5Cfrac%7B%5Csum_%7Bs%20%5Cin%20S%7D%20%5Csum_%7Bd%20%5Cin%20D%7D%20N_%7Bs%7D%28p_%7Bs%2Cd%7D-p_%7Bs%2C1%7D%29x_%7Bs%2Cd%7D%20%5Ccdot%20unit%20%5C%20of%20%5C%20sales%7D%7Bbudget%7D)
-
-Because the decision variables appear both in numerator and denominator, it makes the objective non-linear. Then it goes out of the scope of Python library 'Pulp'.
-
-Since there are many non-linear solvers even including metaheuristic solutions, it is not a complete deal breaker but I took a simplified approach here.
+Of cource, this is not a good thing considering the untouched budget can be used for the purposes other than this coupon campaign. So, it would be better to give just 18,900 USD for this campaign.
 
 <br />
 
 ## Isn't ROI too low in the case study?
 
-Actually it is. It was 2.25% against the investment of 18,000 USD, which is around 400 USD. This amount of return against as much investment as 18,000 USD is just a joke--particularly so when we remember we did not take the non-coupon cost or indirect cost out of consideration in this study.
+Actually it is. It was 2.15% against the investment of 18,900 USD, which is 400 USD. This amount of return against as much investment as 18,900 USD is just a joke--particularly so when we remember we did not take the non-coupon cost or indirect cost out of consideration in this study.
 
 Based on this analysis, just giving up the plan is an idea: we will be a lot better off than executing plan and being disappointed later.
 
 Another considerations may come if we:
+- try to increase unit sales. This is actually a big game changer. Changing unit sales from 30 USD to 40 USD will raise the ROI up to 25%. So, efforts to increae the customer spending when they buy something from us will be largely paid off. 
+- take this as a "door-knocking" campaign and believe they will come back more in the future. We may be able to take this return-to-shop effect if we incorporate the LTV (Lifetime Value) as a basis of our optimization study. Of course, it will require more assumptions and preliminary analyses.
 - do an adjustment of coupon value. This should be followed by the change of conversion probabilities; as a matter of course, it is natural to believe the coupon value changes cause shifts of their conversion probabilities.
 - do a better job in customer segmentation. Again this should lead to the redraft of conversion probabilities.
-- take this as a "door-knocking" campaign and believe they will come back more in the future. We may be able to take this return-to-shop effect if we incorporate the LTV (Lifetime Value) as a basis of our optimization study. Of course, it will require more assumptions and preliminary analyses.
-- grow the customer base. This should be more business-driven approach and will need many people got involved but could be fruitful when successful.
 
 <br />
 
@@ -227,9 +212,9 @@ We need modeling in the calculation of the conversion probabilities. In the stud
 
 Also, currently we only use "age" and "last year frequency" as the 'explanatory variables' of the background models, but we can elaborate more here and get more granular probabilities determination. 
 
-As the background models do better jobs in the accuracy, we are more likely to have better amount in ROI.
+The better jobs the background models do in the customer targeting, we are more likely to have better amount in the ROI.
 
-Reversely, we may be able to define the minimally-required modeling accuracy to hit the expected ROI. For me, this approach can give more satisfactory outcomes in senses that:
+Reversely, we may be able to define the minimally-required modeling accuracy to hit the expected ROI. Tthis approach may give more satisfactory outcomes in senses that:
 - we can make better communications with business-side stakeholders. The modeling metrics (e.g. accuracy, RSME etc.) are not a part of life for them but ROI is.
 - we can define our modeling baseline we want to beat as more visible and meaningful.
 
