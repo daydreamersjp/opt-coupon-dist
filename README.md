@@ -129,7 +129,7 @@ Since we only care about the amount the coupon is actually redeemed, the amount 
 <br /><br />
 
 # Results
-## Fixed budget
+## Find optimal with fixed budget
 For the ease of the problem, let's first remove some flexibility and define the followings as exogenous parameters:
 - ![](https://latex.codecogs.com/gif.latex?c_%7Bdm1%7D%20%3D%200), ![](https://latex.codecogs.com/gif.latex?c_%7Bdm2%7D%20%3D%2010), and ![](https://latex.codecogs.com/gif.latex?c_%7Bdm3%7D%20%3D%2020).
 - ![](https://latex.codecogs.com/gif.latex?unit%20%5C%20sales%3D30)
@@ -139,13 +139,13 @@ This notebook (./opt_step_by_step.ipynb) gives the modeling walkthrough using `P
 
 Here's the heatmap of the distribution probabilities (![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D)).
 
-<img src="./data/image/heatmap_dm_proportion_10000.jpg" width=750>
+<img src="./data/image/heatmap_dm_proportion_10000.jpg" width=900>
 
 The results indicate that for the group with no purchase last year except for age20\~34, we should send some coupon and particularly the group age50\~ will appreciate the higher valued coupon more. 
 
 And here's the heatmap of the count of mails (![](https://latex.codecogs.com/gif.latex?N_%7Bs%7D%20%5Ccdot%20x_%7Bs%2Cd%7D)).
 
-<img src="./data/image/heatmap_dm_number_10000.jpg" width=750>
+<img src="./data/image/heatmap_dm_number_10000.jpg" width=900>
 
 <br />
 
@@ -159,7 +159,7 @@ The value is -217 USD. So, this means that limiting the budget at 10,000 USD wil
 
 <br />
 
-## Variable budget and finding optimal
+## Find optimal with variable budget
 Then let's move the budget amount.
 
 - ![](https://latex.codecogs.com/gif.latex?c_%7Bdm1%7D%20%3D%200), ![](https://latex.codecogs.com/gif.latex?c_%7Bdm2%7D%20%3D%2010), and ![](https://latex.codecogs.com/gif.latex?c_%7Bdm3%7D%20%3D%2020).
@@ -171,7 +171,7 @@ The notebook (./opt_all.ipynb) gives the code of this optimization.
 
 The optimized budget amount is 18,900 USD.
 
-<img src="./data/image/heatmap_dm_proportion_number_18900.jpg" width=750>
+<img src="./data/image/heatmap_dm_proportion_number_18900.jpg" width=900>
 
 In this case, the increase of the profit against the status quo is 400 USD. Alright, it is positive this time.
 
