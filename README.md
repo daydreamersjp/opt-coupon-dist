@@ -151,7 +151,7 @@ And here's the heatmap of the count of mails (![](https://latex.codecogs.com/gif
 
 Let's check how much we got overall net increase of the profit against the status quo.
 
-![](https://latex.codecogs.com/gif.latex?profit%20%5C%20with%20%5C%20optimized%20%5C%20coupon%20%5C%20plan%20-%20profit%20%5C%20with%20%5C%20no%20%5C%20coupon%20%5C%5C%20%5C%5C%20%3D%20%28%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cd%7D%20%5Ccdot%20x_%7Bs%2Cd%7D%20%5Ccdot%20unit%20%5C%20sales%20-%20%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cd%7D%20%5Ccdot%20x_%7Bs%2Cd%7D%20%5Ccdot%20c_%7Bd%7D%29%20%5C%5C%20-%20%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cdm1%7D%20%5Ccdot%20unit%20%5C%20sales)
+![](https://latex.codecogs.com/gif.latex?profit%20%5C%20with%20%5C%20optimized%20%5C%20coupon%20%5C%20plan%20-%20profit%20%5C%20with%20%5C%20no%20%5C%20coupon%20%5C%5C%20%5C%5C%20%3D%20%28%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cd%7D%20%5Ccdot%20x_%7Bs%2Cd%7D%20%5Ccdot%20unit%20%5C%20sales%20-%20%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cd%7D%20%5Ccdot%20x_%7Bs%2Cd%7D%20%5Ccdot%20c_%7Bd%7D%29%20%5C%5C%20-%20%5Csum_%7Bs%20%5Cin%20S%7DN_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cdm1%7D%20%5Ccdot%20unit%20%5C%20sales)
 
 <br />
 
