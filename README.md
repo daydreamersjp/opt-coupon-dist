@@ -147,6 +147,8 @@ And here's the heatmap of the count of mails (![](https://latex.codecogs.com/gif
 
 <img src="./data/image/heatmap_dm_number_10000.jpg" width=750>
 
+<br />
+
 Let's check how much we got overall net increase of the profit against the status quo.
 
 ![](https://latex.codecogs.com/gif.latex?profit%20%5C%20with%20%5C%20optimized%20%5C%20coupon%20%5C%20plan%20-%20profit%20%5C%20with%20%5C%20no%20%5C%20coupon%20%5C%5C%20%5C%5C%20%3D%20%28%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cd%7D%20%5Ccdot%20x_%7Bs%2Cd%7D%20%5Ccdot%20unit%20%5C%20sales%20-%20%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cd%7D%20%5Ccdot%20x_%7Bs%2Cd%7D%20%5Ccdot%20c_%7Bd%7D%29%20%5C%5C%20-%20%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cdm1%7D%20%5Ccdot%20unit%20%5C%20sales)
@@ -163,34 +165,34 @@ Then let's move the budget amount.
 - ![](https://latex.codecogs.com/gif.latex?c_%7Bdm1%7D%20%3D%200), ![](https://latex.codecogs.com/gif.latex?c_%7Bdm2%7D%20%3D%2010), and ![](https://latex.codecogs.com/gif.latex?c_%7Bdm3%7D%20%3D%2020).
 - ![](https://latex.codecogs.com/gif.latex?unit%20%5C%20sales%3D30)
 
-
-
-
-
-This chart shows the increase of the conversion against the increase of the budget.
-
-<img src="./data/image/scatter_plot_budget_and_conversion_increase.jpg" width=500>
-
-Both lines are monotonically increasing but the increase of the conversion is slightly away upward from the diagonal line, which means we starts from the "low-hanging fruit" but as we send more coupons the uplift of the conversions decays since less juice is left.
-
 <br />
 
-Then this chart shows the ROIs.
+The notebook XXXXXXXXXXXXXXXXXXX gives the code of this optimization.
 
-<img src="./data/image/scatter_plot_budget_vs_roi.jpg" width=500>
+The optimized budget amount is 18,900 USD.
 
-Now we got the champion outcome at the budget of 18,000 USD. If the budget is less than 18,000 USD we miss further gaining opportunity, while if the budget is more than 18,000 USD we will just lose money because we cannot expect the sales is more than we pay.
+<img src="./data/image/heatmap_dm_proportion_number_18900.jpg" width=750>
 
-<br />
-
-Finally we see the grand best solution for the mail distribution with budget 18,000 USD.
-
-<img src="./data/image/heatmap_dm_proportion_number_18000.jpg" width=750>
+In this case, the increase of the profit against the status quo is 400 USD. Alright, it is positive this time.
 
 <br /><br />
 
 # Let's Review the Results
-Here let's review the results and discuss what we can think next.
+## What's happening before and after the optimal budget amount.
+
+To visualize how changing budget amount maximizes the profit, I also ran the optimization repeatedly on every 1,000 USD increment from 5,000 USD to 30,000 USD.
+
+This chart shows the increase of the incremental profit ( = profit with optimal coupon plan - profit with no coupon) over the budget amounts.
+
+<img src="./data/image/scatter_plot_budget_and_conversion_increase_2.jpg" width=400>
+<img src="./data/image/scatter_plot_budget_vs_profit_increase.jpg" width=400>
+
+The profit increase hits the ceiling at 18,900 USD and no longer grows as the budget is added. This means the budget is no longer used for coupon and left without untouched, because sending coupon to more customers will not add profit but let us lose money.
+
+Of cource, this is not a good thing considering the untouched budget can be used for the purposes other than this coupon campaign.
+
+
+<br />
 
 ## Can we use budget amount as the decision variable and ROI as the objective?
 
