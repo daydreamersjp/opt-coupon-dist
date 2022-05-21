@@ -236,8 +236,10 @@ Per some study appeared in the link above, "the number of people who drowned by 
 
 In the coupon study, we must tackle the same possible disjoint, and answer if the coupon amount causing and driving the conversions? The most widely accepted approach to answer this question the most accurately is doing the randomized control trial. In the coupon case, before we run the optimization study, we stochastically assign the direct mail types to the customers and see how the results differ between the assignment groups.
 
-As known well, this approach has a lot of shortcomings including the costs, loss of opportunities during the trial, limitation in the future change of the options etc., then hopefully we want to get them through the data we already got in the past.
+As known well, this approach has a lot of shortcomings including the costs, loss of opportunities during the trial, limitation in the future change of the options etc., then hopefully we want to get them through the data we already got in the past. Then here we need causality analysis.
 
-This topic is more about the "causality" analysis, then I would like to leave to another document.
+![](./data/image/feedback_loop.jpg)
+
+Executing the plan stochastically is one important first mile of the self-feedback loop, because by weighting the observed outcomes by the probability of the segment, the estimates can be debiased to the causal effect we need to get. See <a href="https://en.wikipedia.org/wiki/Inverse_probability_weighting">“inversed probability weighting”</a> for more details.
 
 <br />
