@@ -77,20 +77,20 @@ There are 5,000 customers in the data.
 
 # Model
 ## Define notations
-Let ![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D) denote the probability to send the customer segment ![](https://latex.codecogs.com/gif.latex?s) the direct mail type ![](https://latex.codecogs.com/gif.latex?d), where ![](https://latex.codecogs.com/gif.latex?s%20%5Cin%20%5C%7B1%2C2%2C...%2C16%5C%7D%20%3D%20S) and ![](https://latex.codecogs.com/gif.latex?d%20%5Cin%20%5C%7Bdm1%2Cdm2%2Cdm3%5C%7D%20%3D%20D), which means there are 16 different types of customers (in this time's example, defined by customer age group and last year conversion frequency group; and three different types of direct mail.
+Let $x_{s,d}$ denote the probability to send the customer segment $s$ the direct mail type $d$, where $s \ \in \ ${$1, \ 2, \ .... \ 16$}$ = S$ and $d \ \in \ ${$dm1, \ dm2, \ dm3 $}$ =D$, which means there are 16 different types of customers (in this time's example, defined by customer age group and last year conversion frequency group; and three different types of direct mail.
 
 Each direct mail type represents:
-- ![](https://latex.codecogs.com/gif.latex?dm1): No direct mail sent (status quo).
-- ![](https://latex.codecogs.com/gif.latex?dm2): A direct mail with 10 USD coupon sent.
-- ![](https://latex.codecogs.com/gif.latex?dm3): A direct mail with 20 USD coupon sent.
+- dm1: No direct mail sent (status quo).
+- dm2: A direct mail with 10 USD coupon sent.
+- dm3: A direct mail with 20 USD coupon sent.
 
 The same index notations will be used hereinafter.
 
-Let ![](https://latex.codecogs.com/gif.latex?p_%7Bs%2Cd%7D) denote the probability of conversion when the customers belonging to segment ![](https://latex.codecogs.com/gif.latex?s) receive the direct mail of type ![](https://latex.codecogs.com/gif.latex?d).
+Let $p_{s,d} denote the probability of conversion when the customers belonging to segment $s$ receive the direct mail of type $d$.
 
-Let ![](https://latex.codecogs.com/gif.latex?c_%7Bd%7D) denote the amount of coupon attached to each direct mail types. We will ignore the non-coupon costs in this study. Then, ![](https://latex.codecogs.com/gif.latex?c_%7Bdm1%7D%3D0%2C%20c_%7Bdm2%7D%3D10%2C%20c_%7Bdm3%7D%3D20).
+Let $c_{d}$ denote the amount of coupon attached to each direct mail types. We will ignore the non-coupon costs in this study. Then, $c_{dm1}=0, \ c_{dm2}=10, \ c_{dm3}=20$.
 
-Let ![](https://latex.codecogs.com/gif.latex?N_%7Bs%7D) denote the number of customers belonging to the segment ![](https://latex.codecogs.com/gif.latex?s).
+Let $N_{s}$ denote the number of customers belonging to the segment $s$.
 
 <br />
 
@@ -108,23 +108,30 @@ We are happiest when the budget creates the most increase in profit. For simplic
 
 <br />
 
-![](https://latex.codecogs.com/gif.latex?increase%20%5C%20of%20%5C%20sales%20-%20coupon%20%5C%20redeemed%20%5C%5C%20%5C%5C%20%3D%20%5Csum_%7Bs%20%5Cin%20S%7D%20%5Csum_%7Bd%20%5Cin%20D%7D%20N_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cd%7D%5Ccdot%20x_%7Bs%2Cd%7D%20%5Ccdot%20unit%20%5C%20sales%20-%20%5Csum_%7Bs%20%5Cin%20S%7D%20%5Csum_%7Bd%20%5Cin%20D%7D%20N_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cd%7D%5Ccdot%20x_%7Bs%2Cd%7D%20%5Ccdot%20c_%7Bd%7D)
+$$increase \ of \ sales \ - \ coupon \ redeemed \\ = \ \sum_{s \in S} \sum_{d \in D} N_{s} \ \cdot \ p_{s,d} \ \cdot \ x_{s,d} \ \cdot \ unit \ sales \ - \ \sum_{s \in S} \sum_{d \in D} N_{s} \ \cdot \ p_{s,d} \ \cdot \ x_{s,d} \ \cdot \ c_{d}$$
 
 <br />
 
 ### Constraint 1: the sum of probabilities to the same segment for all direct mail type is 1
-![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bd%20%5Cin%20D%7Dx_%7Bs%2Cd%7D%3D1%20%5C%20%5C%20%28s%20%5Cin%20S%29)
+
+<br />
+
+$$\sum_{d \in D} x_{s,d} \ = \ 1 \\ (s \ \in \ S) $$
+
 <br /><br />
 
 ### Constraint 2: expected total amount of coupon redeemed is within budget
 Since we only care about the amount the coupon is actually redeemed, the amount is the number of (expected) conversion, rather than the number of coupons sent.
 
-![](https://latex.codecogs.com/gif.latex?%5Csum_%7Bs%20%5Cin%20S%7D%20%5Csum_%7Bd%20%5Cin%20D%7D%20N_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cd%7D%5Ccdot%20x_%7Bs%2Cd%7D%20%5Ccdot%20c_%7Bd%7D%20%5Cleq%20max%5C%20budget)
+$$\sum_{s \in S} \sum_{d \in D} N_{s} \ \cdot \ p_{s,d} \ \cdot \ x_{s,d} \ \cdot \ c_{d} \ \leq \ max \ budget$$
+
 <br /><br />
 
 ### Constraint 3: letting any types of direct mail cover at least 10% of customers of every segment
 
-![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D%20%5Cgeq%200.1%20%5C%20%5C%20%28x%20%5Cin%20S%2C%20d%20%5Cin%20D%29)
+<br />
+
+$$x_{s,d} \ \geq \ 0.1 \\ (s \ \in \ S, \ d \ \in \ D)$$
 
 <br /><br />
 
@@ -137,13 +144,13 @@ For the ease of the problem, let's first remove some flexibility and define the 
 
 This notebook (./opt_step_by_step.ipynb) gives the modeling walkthrough using `Pulp`. 
 
-Here's the heatmap of the distribution probabilities (![](https://latex.codecogs.com/gif.latex?x_%7Bs%2Cd%7D)).
+Here's the heatmap of the distribution probabilities ($x_{s,d}$).
 
 <img src="./data/image/heatmap_dm_proportion_10000.jpg" width=900>
 
 The results indicate that for the group with no purchase last year except for age20\~34, we should send some coupon and particularly the group age50\~ will appreciate the higher valued coupon more. 
 
-And here's the heatmap of the count of mails (![](https://latex.codecogs.com/gif.latex?N_%7Bs%7D%20%5Ccdot%20x_%7Bs%2Cd%7D)).
+And here's the heatmap of the count of mails ($N_{s} \ \cdot \ x_{s,d}$).
 
 <img src="./data/image/heatmap_dm_number_10000.jpg" width=900>
 
@@ -151,7 +158,7 @@ And here's the heatmap of the count of mails (![](https://latex.codecogs.com/gif
 
 Let's check how much we got overall net increase of the profit against the status quo.
 
-![](https://latex.codecogs.com/gif.latex?profit%20%5C%20with%20%5C%20optimized%20%5C%20coupon%20%5C%20plan%20-%20profit%20%5C%20with%20%5C%20no%20%5C%20coupon%20%5C%5C%20%5C%5C%20%3D%20%28%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cd%7D%20%5Ccdot%20x_%7Bs%2Cd%7D%20%5Ccdot%20unit%20%5C%20sales%20-%20%5Csum_%7Bs%20%5Cin%20S%7D%5Csum_%7Bd%20%5Cin%20D%7DN_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cd%7D%20%5Ccdot%20x_%7Bs%2Cd%7D%20%5Ccdot%20c_%7Bd%7D%29%20%5C%5C%20-%20%5Csum_%7Bs%20%5Cin%20S%7DN_%7Bs%7D%20%5Ccdot%20p_%7Bs%2Cdm1%7D%20%5Ccdot%20unit%20%5C%20sales)
+$$profit \ with \ optimized \ coupon \ plan \ - \ profit \ with \ no \ coupon \ = \ (\sum_{s \in S} \sum_{d \in D} N_{s} \ \cdot \ p_{s,d} \ \cdot \ x_{s,d} \ \cdot \ unit \ sales \ - \ \sum_{s \in S} \sum_{d \in D} N_{s} \ \cdot \ p_{s,d} \ \cdot \ x_{s,d} \ \cdot \ c_{d}) \ - \ \sum_{s \in S}N_{s} \ \cdot \ p_{s,dm1} \cdot \ unit \ sales$$
 
 <br />
 
